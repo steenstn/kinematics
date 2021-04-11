@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>Kinetics</title>
+  <style>
+    body {
+      margin:0px;
+      padding:0px;
+    }
+
+    canvas{
+      outline:0;
+      border:1px solid #666;
+    }
+  </style>
+</head>
+<body>
+
+<script src="js/Arm.js" type="text/javascript"></script>
+<script src="js/IKSystem.js" type="text/javascript"></script>
+<script src="js/Main.js" type="text/javascript"></script>
+
+<canvas id='c'></canvas>
+<script>
+var canvas = document.getElementById("c");
+canvas.width = 1000;
+canvas.height = 600;
+var context = canvas.getContext("2d");
+var game = new Main(canvas, context);
+
+document.body.addEventListener('mousemove', function(evt){
+        game.mouseMove(evt.clientX, evt.clientY)
+
+}, false);
+
+
+var run = () => {
+  game.run();
+  setTimeout(run, 20);
+}
+run()
+</script>
+</body>
+</html>
