@@ -25,12 +25,5 @@ class Arm {
         }
     }
     render(context) {
-        context.strokeStyle = "#000";
-        context.lineWidth = this.width;
-        context.lineCap = "round";
-        context.beginPath();
-        context.moveTo(this.x, this.y);
-        context.lineTo(this.getEndX(), this.getEndY());
-        context.stroke();
     }
 }

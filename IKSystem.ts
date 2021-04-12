@@ -86,9 +86,27 @@ class IKSystem {
     }
 
     render(context: any) {
-        this.arms.forEach(arm => {
+        let arm = this.arms[0]
+        context.strokeStyle="#000";
+        context.lineWidth = arm.width;
+        context.lineJoin = 'round';
+        context.lineCap = "round";
+        context.beginPath();
+        context.moveTo(this.x, this.y);
+        context.lineTo(arm.getEndX(), arm.getEndY());
+        for(let i=1; i<this.arms.length;i++) {
+            arm = this.arms[i];
+            
+            context.lineWidth = arm.width;
+            context.lineTo(arm.x, arm.y);
+            context.lineTo(arm.getEndX(), arm.getEndY());
+            
+        context.stroke();
+        }
+        
+        /*this.arms.forEach(arm => {
             arm.render(context);
-        });
+        });*/
         //context.fillStyle = "#f00";
       //  context.fillRect(this.wantedX, this.wantedY,5,5);
     }

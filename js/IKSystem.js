@@ -66,8 +66,21 @@ class IKSystem {
         });
     }
     render(context) {
-        this.arms.forEach(arm => {
-            arm.render(context);
-        });
+        let arm = this.arms[0];
+        context.strokeStyle = "#000";
+        context.lineWidth = arm.width;
+        context.lineJoin = 'round';
+        context.lineCap = "round";
+        context.beginPath();
+        context.moveTo(this.x, this.y);
+        context.lineTo(arm.getEndX(), arm.getEndY());
+        for (let i = 1; i < this.arms.length; i++) {
+            arm = this.arms[i];
+            context.lineWidth = arm.width;
+            context.lineTo(arm.x, arm.y);
+            context.lineTo(arm.getEndX(), arm.getEndY());
+            context.stroke();
+        }
+        context.stroke();
     }
 }
