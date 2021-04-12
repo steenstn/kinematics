@@ -2,7 +2,6 @@ class IKSystem {
     constructor(x, y) {
         this.arms = [];
         this.wantedTimer = Math.random() * 10;
-        this.idleAngle = 0;
         this.x = x;
         this.y = y;
         this.wantedX = this.x;

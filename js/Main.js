@@ -2,8 +2,6 @@ class Main {
     constructor(canvas, context) {
         this.mouseX = 0;
         this.mouseY = 0;
-        this.arms = [];
-        this.numArms = 40;
         this.iks = [];
         this.canvas = canvas;
         this.context = context;
@@ -37,7 +35,7 @@ class Main {
     run() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.iks.forEach(iks => {
-            if (Main.distance(this.mouseX, this.mouseY, iks.x, iks.y) < 400) {
+            if (Main.distance(this.mouseX, this.mouseY, iks.x, iks.y) < 450) {
                 iks.attract(this.mouseX, this.mouseY);
                 iks.reach();
             }

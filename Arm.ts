@@ -1,7 +1,7 @@
 class Arm {
     x: number;
     y: number;
-    private angle: number;
+    angle: number;
     private length: number;
     private width: number;
     parent: Arm;

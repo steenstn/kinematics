@@ -8,7 +8,6 @@ class IKSystem {
     private attractionX:number;
     private attractionY: number;
     private wantedTimer = Math.random()*10;
-    private idleAngle: number = 0;
 
     constructor(x: number, y: number) {
         this.x = x;
@@ -19,7 +18,6 @@ class IKSystem {
         this.attractionY = this.wantedY;
     }
 
-    
 
     addArm(length: number, width: number) {
         let newArm = new Arm(length, width);
@@ -62,10 +60,6 @@ class IKSystem {
             this.wantedTimer=Math.random()*15;
         }
         this.wantedTimer--;
-        /*
-        this.idleAngle+=0.08;
-        this.wantedX+=6*Math.cos(this.idleAngle);
-        this.wantedY+=6*Math.sin(this.idleAngle);*/
         
         this.reach();
     }
