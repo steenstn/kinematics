@@ -16,12 +16,21 @@ class Main {
     init() {
         for (let i = 0; i < 4; i++) {
             let iks = new IKSystem(200 + 80 * i, this.canvas.height + 5);
-            iks.addArm(60, 10);
-            iks.addArm(60, 10);
-            iks.addArm(60, 5);
-            iks.addArm(50, 5);
-            iks.addArm(40, 3);
-            iks.addArm(40, 2);
+            for (let a = 0; a < 6; a++) {
+                iks.addArm(20, 10);
+            }
+            for (let a = 0; a < 10; a++) {
+                iks.addArm(10, 8);
+            }
+            for (let a = 0; a < 10; a++) {
+                iks.addArm(10, 6);
+            }
+            for (let a = 0; a < 6; a++) {
+                iks.addArm(5, 4);
+            }
+            for (let a = 0; a < 6; a++) {
+                iks.addArm(5, 2);
+            }
             this.iks.push(iks);
         }
     }
